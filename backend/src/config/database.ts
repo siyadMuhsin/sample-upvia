@@ -8,6 +8,12 @@ export const connectDatabase = async (): Promise<void> => {
     return;
   }
 
+  // If explicitly requested to run zero-db standalone mode
+  if (process.env.USE_EMBEDDED_DB === 'true' || process.env.MONGODB_URI === 'embedded') {
+    console.log('[Database] USE_EMBEDDED_DB requested. Initializing embedded in-memory MongoDB engine...');
+    return connectEmbeddedDatabase();
+  }
+
   try {
     // Attempt standard connection first
     mongoose.set('strictQuery', true);
@@ -18,19 +24,22 @@ export const connectDatabase = async (): Promise<void> => {
   } catch (error) {
     console.warn(`[Database] Could not connect to primary MongoDB at ${ENV.MONGODB_URI}.`);
     console.log('[Database] Initializing embedded MongoDB engine for seamless development/testing...');
+    return connectEmbeddedDatabase();
+  }
+};
 
-    try {
-      if (!mongodInstance) {
-        const { MongoMemoryServer } = await import('mongodb-memory-server');
-        mongodInstance = await MongoMemoryServer.create();
-      }
-      const uri = mongodInstance.getUri();
-      await mongoose.connect(uri);
-      console.log(`[Database] Connected to embedded MongoDB instance at ${uri}`);
-    } catch (memError) {
-      console.error('[Database] Failed to connect to any MongoDB instance:', memError);
-      throw memError;
+const connectEmbeddedDatabase = async (): Promise<void> => {
+  try {
+    if (!mongodInstance) {
+      const { MongoMemoryServer } = await import('mongodb-memory-server');
+      mongodInstance = await MongoMemoryServer.create();
     }
+    const uri = mongodInstance.getUri();
+    await mongoose.connect(uri);
+    console.log(`[Database] Connected to embedded MongoDB instance at ${uri}`);
+  } catch (memError) {
+    console.error('[Database] Failed to connect to any MongoDB instance:', memError);
+    throw memError;
   }
 };
 
