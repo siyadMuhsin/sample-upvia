@@ -1,0 +1,93 @@
+{
+  "brand": {
+    "name": "Upvia",
+    "nameAr": "أبفيا",
+    "tagline": "UPGRADE • PROTECT • MOVE FORWARD",
+    "descriptor": "University Employability & Career Intelligence Platform"
+  },
+  "nav": {
+    "overview": "Overview",
+    "forUniversities": "For Universities",
+    "forStudents": "For Students",
+    "forCompanies": "For Companies",
+    "opportunities": "Opportunities",
+    "login": "Sign In",
+    "dashboard": "Dashboard",
+    "profile": "My Profile",
+    "applications": "Applications",
+    "training": "Co-op Training",
+    "interviews": "Interviews",
+    "jobOffers": "Job Offers",
+    "trainees": "Trainees",
+    "evaluations": "Evaluations",
+    "students": "Students",
+    "graduates": "Graduates & Alumni",
+    "employment": "Employment Analytics",
+    "skillGaps": "Skill Gap Intelligence",
+    "studyPlans": "Study Plans",
+    "reports": "Reports & Exports",
+    "earlyWarnings": "Early Warning System",
+    "auditLogs": "Audit Logs",
+    "logout": "Sign Out"
+  },
+  "landing": {
+    "badge": "National Employability Infrastructure",
+    "heroTitle": "Bridging Academic Learning & Industry Careers",
+    "heroSubtitle": "Upvia unifies university curricula, cooperative training workflows, explainable AI opportunity matching, and longitudinal graduate tracking into a single enterprise platform.",
+    "ctaStudent": "Explore Opportunities",
+    "ctaDemo": "Access Demo Portals",
+    "stats": {
+      "employmentRate": "92.5%",
+      "employmentRateLabel": "Employment Rate within 6 Months",
+      "internConversion": "86.4%",
+      "internConversionLabel": "Training-to-Employment Conversion",
+      "partnerCompanies": "250+",
+      "partnerCompaniesLabel": "Accredited Industrial Partners",
+      "matchedHours": "120,000+",
+      "matchedHoursLabel": "Verified Co-op Training Hours"
+    },
+    "workflowTitle": "From University Accreditation to Permanent Employment",
+    "workflowSubtitle": "An auditable, explainable, and multi-stakeholder operational pipeline.",
+    "steps": {
+      "step1Title": "Curriculum & Academic Sync",
+      "step1Desc": "Synchronized with university SIS. Programs, courses, and skills are taxonomy-mapped without manual student duplication.",
+      "step2Title": "Opportunity Workflow",
+      "step2Desc": "Companies submit opportunities. Program coordinators review academic relevance and Training Units verify accreditation.",
+      "step3Title": "Explainable Matching",
+      "step3Desc": "Deterministic weighted scoring calculates exact skill fit, missing prerequisites, and recommended preparatory courses.",
+      "step4Title": "Active Training & Evaluation",
+      "step4Desc": "Weekly attendance tracking, task management, supervisor evaluations across 10 dimensions, and student feedback.",
+      "step5Title": "Job Offer & Graduate Tracking",
+      "step5Desc": "High-performing trainees receive post-coop offers. Longitudinal tracking records employment at 3, 6, 12, and 24 months."
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "profileCompletion": "Profile Completion",
+    "activePlacements": "Active Placements",
+    "pendingOffers": "Pending Job Offers",
+    "attendanceRate": "Attendance Rate",
+    "matchScore": "Match Score",
+    "skillsAcquired": "Skills Acquired",
+    "recommendations": "Recommended Opportunities",
+    "applyNow": "Apply Now",
+    "viewDetails": "View Details"
+  },
+  "common": {
+    "loading": "Loading data...",
+    "search": "Search...",
+    "filter": "Filter",
+    "status": "Status",
+    "actions": "Actions",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save Changes",
+    "exportCsv": "Export CSV",
+    "exportJson": "Export JSON",
+    "back": "Back",
+    "noData": "No records found.",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}

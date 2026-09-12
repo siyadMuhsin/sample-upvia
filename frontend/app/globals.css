@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-archivo: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-cairo: 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  color: #0B1B3A;
+  background-color: #F8FAFC;
+  font-family: var(--font-archivo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL specific font */
+[dir="rtl"] body, [dir="rtl"] * {
+  font-family: var(--font-cairo), system-ui, sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
