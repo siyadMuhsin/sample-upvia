@@ -31,5 +31,6 @@ EXPOSE 5000
 ENV PORT=5000
 ENV NODE_ENV=production
 ENV USE_EMBEDDED_DB=true
+ENV MONGOMS_VERSION=7.0.11
 
 CMD ["node", "backend/dist/server.js"]

@@ -32,7 +32,11 @@ const connectEmbeddedDatabase = async (): Promise<void> => {
   try {
     if (!mongodInstance) {
       const { MongoMemoryServer } = await import('mongodb-memory-server');
-      mongodInstance = await MongoMemoryServer.create();
+      mongodInstance = await MongoMemoryServer.create({
+        binary: {
+          version: process.env.MONGOMS_VERSION || '7.0.11',
+        },
+      });
     }
     const uri = mongodInstance.getUri();
     await mongoose.connect(uri);
