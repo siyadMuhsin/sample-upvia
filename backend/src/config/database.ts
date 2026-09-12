@@ -8,9 +8,15 @@ export const connectDatabase = async (): Promise<void> => {
     return;
   }
 
-  // If explicitly requested to run zero-db standalone mode
-  if (process.env.USE_EMBEDDED_DB === 'true' || process.env.MONGODB_URI === 'embedded') {
-    console.log('[Database] USE_EMBEDDED_DB requested. Initializing embedded in-memory MongoDB engine...');
+  // If real external MONGODB_URI is provided, always connect to it
+  const hasExternalUri =
+    !!process.env.MONGODB_URI &&
+    process.env.MONGODB_URI !== 'embedded' &&
+    !process.env.MONGODB_URI.includes('127.0.0.1') &&
+    !process.env.MONGODB_URI.includes('localhost');
+
+  if (!hasExternalUri && (process.env.USE_EMBEDDED_DB === 'true' || process.env.MONGODB_URI === 'embedded')) {
+    console.log('[Database] No external database configured. Initializing embedded in-memory MongoDB engine...');
     return connectEmbeddedDatabase();
   }
 

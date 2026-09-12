@@ -17,7 +17,5 @@ services:
         value: 7d
       - key: FRONTEND_URL
         value: http://localhost:3000
-      - key: USE_EMBEDDED_DB
-        value: "true"
       - key: MONGOMS_VERSION
         value: "7.0.11"
