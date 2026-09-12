@@ -30,11 +30,28 @@ export const UpviaLogo: React.FC<UpviaLogoProps> = ({
     lg: 'text-3xl',
   };
 
+  const markPixelSizes = {
+    sm: 24,
+    md: 32,
+    lg: 40,
+  };
+
   const Content = (
     <div className="inline-flex items-center gap-2.5 select-none">
       {/* Upvia Logotype Mark: U with rising right stroke & 45deg blue-to-cyan gradient */}
-      <div className={`relative ${markSizes[size]} flex-shrink-0`}>
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <div
+        className={`relative ${markSizes[size]} flex-shrink-0`}
+        style={{ width: markPixelSizes[size], height: markPixelSizes[size] }}
+      >
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          width={markPixelSizes[size]}
+          height={markPixelSizes[size]}
+          style={{ width: markPixelSizes[size], height: markPixelSizes[size], display: 'block' }}
+        >
           <defs>
             <linearGradient id="upviaBrandGradient" x1="0%" y1="100%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#1A56DB" />
