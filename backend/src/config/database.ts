@@ -18,7 +18,7 @@ export const connectDatabase = async (): Promise<void> => {
     // Attempt standard connection first
     mongoose.set('strictQuery', true);
     await mongoose.connect(ENV.MONGODB_URI, {
-      serverSelectionTimeoutMS: 2500,
+      serverSelectionTimeoutMS: 10000,
     });
     console.log(`[Database] Connected to MongoDB at ${ENV.MONGODB_URI}`);
   } catch (error) {
