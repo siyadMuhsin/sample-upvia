@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-archivo: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-cairo: 'Cairo', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  color: #0B1B3A;
+  background-color: #F8FAFC;
+  font-family: var(--font-archivo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL specific font */
+[dir="rtl"] body, [dir="rtl"] * {
+  font-family: var(--font-cairo), system-ui, sans-serif;
+}
+
+/* Shared form input styling — matches the inline input styles used across
+   login/auth screens, extracted here since the provisioning forms use many
+   in one page. */
+.input-field {
+  @apply w-full px-3 py-2.5 text-xs rounded-xl border border-slate-200 bg-white
+    focus:outline-none focus:ring-2 focus:ring-upvia-blue/20 focus:border-upvia-blue transition-all;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Fixed navy sidebar inner scrollbar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
